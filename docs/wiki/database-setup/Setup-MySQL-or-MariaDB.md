@@ -17,7 +17,8 @@ The following directions assume a default configuration and for productions setu
 Connect to the database (Usually using `mysql -u root -p` if a password has been set on the root database user or `sudo mysql` if not), then enter the following:
 ```
 CREATE DATABASE `powerdnsadmin` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL PRIVILEGES ON `powerdnsadmin`.* TO 'pdnsadminuser'@'localhost' IDENTIFIED BY 'YOUR_PASSWORD_HERE';
+CREATE USER 'pdnsadminuser'@'localhost' IDENTIFIED BY 'YOUR_PASSWORD_HERE';
+GRANT ALL PRIVILEGES ON `powerdnsadmin`.* TO 'pdnsadminuser'@'localhost';
 FLUSH PRIVILEGES;
 ```
 - If your database server is located on a different machine then change 'localhost' to '%'
